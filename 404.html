@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Page Not Found — ReelForge Studio</title>
+  <meta name="description" id="metaDesc" content="The page you're looking for doesn't exist. Head back to ReelForge Studio's homepage." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" id="metaTheme" content="#080808" />
+  <link rel="icon" type="image/x-icon" id="faviconIco" href="" />
+  <link rel="icon" type="image/png"    id="faviconPng" href="" sizes="32x32" />
+  <link rel="apple-touch-icon"         id="appleTouchIcon" href="" />
+
+  <!-- Config files — same source of truth as the rest of the site -->
+  <script src="siteConfig.js"></script>
+  <script src="logoConfig.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --ink:      #080808;
+      --paper:    #f0ede8;
+      --gold:     #c9a96e;
+      --gold-dim: #967d4f;
+      --display:  'Playfair Display', Georgia, serif;
+      --body:     'Inter', system-ui, sans-serif;
+      --mono:     'DM Mono', monospace;
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    body.page-ready { opacity: 1; }
+    @media (prefers-reduced-motion: reduce) { body { opacity: 1; transition: none; } }
+
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── Minimal nav (logo only, links home) ── */
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 2rem 3.5rem;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .logo-img { max-height: 40px; display: block; }
+    .logo-text {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── 404 hero ── */
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(201,169,110,0.07), transparent 60%),
+        var(--ink);
+    }
+    .error-inner { max-width: 560px; }
+    .error-code {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-bottom: 1.6rem;
+    }
+    .error-code::before, .error-code::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold-dim);
+    }
+    .error-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 9vw, 6rem);
+      font-weight: 400;
+      line-height: 1;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+    .error-title em { font-style: italic; color: var(--gold); }
+    .error-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(240,237,232,0.55);
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0 auto 2.4rem;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-family: var(--body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1em 2.4em;
+      border-radius: 1px;
+      cursor: pointer;
+      display: inline-block;
+      transition: background 0.28s, color 0.28s, border-color 0.28s, transform 0.15s;
+    }
+    .btn:active { transform: scale(0.96); }
+    .btn-primary { background: #fff; color: var(--ink); border: 1px solid #fff; }
+    .btn-primary:hover { background: var(--paper); border-color: var(--paper); }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(240,237,232,0.85);
+      border: 1px solid rgba(240,237,232,0.35);
+    }
+    .btn-ghost:hover { color: #fff; border-color: rgba(240,237,232,0.7); }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.68rem;
+      color: rgba(240,237,232,0.28);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.5rem; }
+      .error-main { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo" id="navLogo">
+      <img id="navLogoImg" class="logo-img" src="" alt="" />
+      <span id="navLogoText" class="logo-text" style="display:none"></span>
+    </a>
+  </nav>
+
+  <main class="error-main">
+    <div class="error-inner">
+      <p class="error-code">Error 404</p>
+      <h1 class="error-title">Scene Not <em>Found</em></h1>
+      <p class="error-sub" id="errorSub">The page you're looking for was cut in the final edit. Let's get you back to the main feature.</p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+        <a href="index.html#contact" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p id="footerCopy"></p>
+  </footer>
+
+  <script>
+    // Defensive config guard — see index.html for full rationale.
+    // Ensures this page never throws even if siteConfig.js/logoConfig.js
+    // fail to load, and always reveals the page (no permanent blank screen).
+    if (typeof window.SITE_CONFIG === 'undefined') {
+      console.warn('[ReelForge] siteConfig.js did not load on 404 page — using fallback content.');
+      window.SITE_CONFIG = {
+        business: { name: 'ReelForge Studio', namePart1: 'Reel', namePart2: 'Forge' },
+        seo: { themeColor: '#080808' },
+      };
+    }
+    if (typeof window.LOGO_CONFIG === 'undefined') {
+      console.warn('[ReelForge] logoConfig.js did not load on 404 page — using text-only logo fallback.');
+      window.LOGO_CONFIG = {
+        nav: { src: '', width: 160, height: 40, alt: 'ReelForge Studio' },
+        favicon: { ico: '', png32: '' },
+        appleTouchIcon: '',
+        themeColor: '#080808',
+        fallback: { showText: true, forceText: true },
+      };
+    }
+
+    try {
+    (function boot404() {
+      const C = window.SITE_CONFIG;
+      const L = window.LOGO_CONFIG;
+
+      document.getElementById('faviconIco').href = L.favicon.ico;
+      document.getElementById('faviconPng').href = L.favicon.png32;
+      document.getElementById('appleTouchIcon').href = L.appleTouchIcon;
+      document.getElementById('metaTheme').content = L.themeColor || C.seo.themeColor;
+
+      const img = document.getElementById('navLogoImg');
+      const txt = document.getElementById('navLogoText');
+      const textLogoHtml = C.business.namePart1 + `<span style="color:var(--gold);font-style:italic;">${C.business.namePart2}</span>`;
+      if (L.fallback.forceText) {
+        img.style.display = 'none';
+        txt.innerHTML = textLogoHtml;
+        txt.style.display = '';
+      } else {
+        img.src = L.nav.src;
+        img.alt = L.nav.alt;
+        img.loading = 'eager';
+        img.addEventListener('error', function onErr() {
+          img.style.display = 'none';
+          txt.innerHTML = textLogoHtml;
+          txt.style.display = '';
+          img.removeEventListener('error', onErr);
+        });
+      }
+
+      document.getElementById('errorSub').textContent =
+        `The page you're looking for doesn't exist. Head back to ${C.business.name}'s homepage or get in touch — we'll help you find what you need.`;
+      document.getElementById('footerCopy').textContent =
+        `© ${new Date().getFullYear()} ${C.business.name}. All rights reserved.`;
+
+      requestAnimationFrame(() => document.body.classList.add('page-ready'));
+    })();
+    } catch (err) {
+      console.error('[ReelForge] 404 page boot failed:', err);
+      document.body.classList.add('page-ready'); // never leave the page invisible
+    }
+  </script>
+</body>
+</html>
