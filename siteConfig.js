@@ -100,7 +100,7 @@ const SITE_CONFIG = {
 
   // ── Asset directories (video/thumbnail manifest) ──────────────────
   assets: {
-    videoDir: 'Videos/',
+    videoDir: 'videos/',
     thumbDir: 'public/thumbnails/',
   },
 
