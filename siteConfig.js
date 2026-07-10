@@ -109,12 +109,12 @@ const SITE_CONFIG = {
   // Featured Commercials grid, and the lightbox. Missing video/thumb
   // files fall back to themed gradient placeholders automatically.
   portfolio: [
-    { video: 'coffee.mp4',      thumb: 'coffee.jpg',      ph: 'ph-coffee',      label: 'Coffee Shop'  },
-    { video: 'restaurant.mp4',  thumb: 'restaurant.jpg',  ph: 'ph-restaurant',  label: 'Restaurant'   },
-    { video: 'hotel.mp4',       thumb: 'hotel.jpg',       ph: 'ph-hotel',       label: 'Luxury Hotel' },
-    { video: 'gym.mp4',         thumb: 'gym.jpg',         ph: 'ph-gym',         label: 'Luxury Gym'   },
-    { video: 'realestate.mp4',  thumb: 'realestate.jpg',  ph: 'ph-realestate',  label: 'Real Estate'  },
-    { video: 'supermarket.mp4', thumb: 'supermarket.jpg', ph: 'ph-supermarket', label: 'Supermarket'  },
+    { video: 'coffee.mp4',      thumb: 'coffee.jpeg',      ph: 'ph-coffee',      label: 'Coffee Shop'  },
+    { video: 'restaurant.mp4',  thumb: 'restaurant.jpeg',  ph: 'ph-restaurant',  label: 'Restaurant'   },
+    { video: 'hotel.mp4',       thumb: 'hotel.jpeg',       ph: 'ph-hotel',       label: 'Luxury Hotel' },
+    { video: 'gym.mp4',         thumb: 'gym.jpeg',         ph: 'ph-gym',         label: 'Luxury Gym'   },
+    { video: 'realestate.mp4',  thumb: 'realestate.jpeg',  ph: 'ph-realestate',  label: 'Real Estate'  },
+    { video: 'supermarket.mp4', thumb: 'supermarket.jpeg', ph: 'ph-supermarket', label: 'Supermarket'  },
   ],
 
 };
