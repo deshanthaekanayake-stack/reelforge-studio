@@ -59,8 +59,8 @@ const SITE_CONFIG = {
 
   // ── Direct contact channels ───────────────────────────────────────
   contact: {
-    email:        'hello@reelforge.studio',
-    mailtoUrl:    'mailto:hello@reelforge.studio',
+    email:        'deshanthaekanayake@gmail.com',
+    mailtoUrl:    'mailto:deshanthaekanayake@gmail.com',
 
     whatsapp:     { display: '+84 90 123 4567' },
     whatsappUrl:  'https://wa.me/84901234567',
