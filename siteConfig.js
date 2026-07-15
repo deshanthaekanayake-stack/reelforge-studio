@@ -62,11 +62,11 @@ const SITE_CONFIG = {
     email:        'deshanthaekanayake@gmail.com',
     mailtoUrl:    'mailto:deshanthaekanayake@gmail.com',
 
-    whatsapp:     { display: '+84 90 123 4567' },
-    whatsappUrl:  'https://wa.me/84901234567',
+    whatsapp:     { display: '+94 769 784 022' },
+    whatsappUrl:  'https://wa.me/94769784022',
 
-    zalo:         { display: '+84 90 123 4567' },
-    zaloUrl:      'https://zalo.me/84901234567',
+    zalo:         { display: '+84 877 491 668' },
+    zaloUrl:      'https://zalo.me/84877491668',
 
     address:       'Ho Chi Minh City, Vietnam',
     responseTime:  '24 hours',
